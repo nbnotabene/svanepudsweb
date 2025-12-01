@@ -1,0 +1,339 @@
+/* =======================================
+   Svane Puds - Samlet Style Sheet
+   ======================================= */
+
+/* ---------------------------------------
+   FARVER & VARIABLE
+   --------------------------------------- */
+:root {
+	--primary-color: #007bff;
+	/* Klar blå (Til CTA, overskrifter, links) */
+	--secondary-color: #5cb85c;
+	/* Grøn (Til sekundær CTA) */
+	--light-gray: #eee;
+	--dark-gray: #333;
+	--white: #fff;
+	--black: #000;
+}
+
+/* ---------------------------------------
+GENERELLE NULSTILLINGER & TYPOGRAFI
+background-color: #f8f8f8;
+   --------------------------------------- */
+body {
+	font-family: 'Arial', sans-serif;
+	margin: 0;
+	line-height: 1.6;
+	color: var(--dark-gray);
+	background-color: #f8f8f8;
+	;
+
+	/* RESPONSIV FONT-SIZE (BASE) */
+	/* Min: 1rem (16px), Præf: 0.75vw, Max: 1.125rem (18px) */
+	font-size: clamp(1rem, 0.75vw, 1.125rem);
+}
+
+/* ---------------------------------------
+Navigation
+   --------------------------------------- */
+header {
+	background: #0077cc;
+}
+
+nav a {
+	color: white;
+	margin-right: 15px;
+	text-decoration: underline;
+}
+
+nav a.active {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+nav {
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: 15px;
+	padding: 10px;
+}
+
+
+/* ---------------------------------------
+   LAYOUT & CONTAINERE
+   --------------------------------------- */
+main {
+	max-width: 1100px;
+	margin: 0 0 0 15 auto;
+	/* Vertikal padding, hvis nødvendigt, udover sektions-padding */
+	/* padding: 0 10px;*/
+	/* RESPONSIV HORIZONTAL PADDING (for at sikre plads i siderne) */
+	/* Min: 1rem, Præf: 3vw, Max: 2.5rem */
+	padding-left: clamp(1rem, 3vw, 2.5rem);
+	padding-right: clamp(1rem, 3vw, 2.5rem);
+	background-color: #f8f8f8;
+}
+
+#logo img {
+	background-color: #f8f8f8;
+}
+
+section {
+	/* RESPONSIV VERTIKAL PADDING */
+	/* Min: 1.5rem, Præf: 6vw, Max: 4rem */
+	padding-top: clamp(1.5rem, 6vw, 4rem);
+	padding-bottom: clamp(1.5rem, 6vw, 4rem);
+
+	text-align: center;
+}
+
+
+/* ---------------------------------------
+   OVERSKRIFTER (RESPONSIVT)
+   --------------------------------------- */
+h1 {
+	/* H1: Min: 2rem, Præf: 7vw, Max: 4.5rem (72px) */
+	font-size: clamp(2rem, 7vw, 4.5rem);
+	color: var(--black);
+	/* Overrides til HERO sektionen */
+	margin-bottom: 0.5em;
+	word-break: break-word;
+	/* Sikrer lange linjer brydes på små skærme */
+}
+
+h2 {
+	/* H2: Min: 1.75rem, Præf: 4vw, Max: 3rem (48px) */
+	font-size: clamp(1.75rem, 4vw, 3rem);
+	color: var(--primary-color);
+	margin-bottom: 1em;
+	border-bottom: 2px solid var(--light-gray);
+	display: inline-block;
+	padding-bottom: 5px;
+}
+
+h3 {
+	/* H3: Min: 1.3rem, Præf: 2.5vw, Max: 1.8rem (29px) */
+	font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+	color: var(--black);
+	margin-top: 0;
+	border-bottom: 2px solid var(--primary-color);
+	padding-bottom: 5px;
+}
+
+
+/* ---------------------------------------
+   CTA KNAP STYLING
+   --------------------------------------- */
+.cta-button {
+	display: inline-block;
+	background-color: var(--primary-color);
+	color: var(--white);
+	padding: 15px 30px;
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+	font-size: 1.1em;
+	margin-top: 20px;
+	border: none;
+	/* Til brug i form-knap */
+	cursor: pointer;
+}
+
+.cta-button:hover {
+	background-color: #0056b3;
+	/* Mørkere blå ved hover */
+}
+
+.secondary-cta {
+	background-color: var(--secondary-color);
+}
+
+.secondary-cta:hover {
+	background-color: #449d44;
+}
+
+
+/* ---------------------------------------
+   1. HERO SEKTION
+   --------------------------------------- */
+.hero {
+	/* Billede skal indsættes her som en URL */
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('http://googleusercontent.com/image_collection/image_retrieval/18229233537347191884') center center no-repeat;
+	background-size: cover;
+	padding: 100px 20px;
+}
+
+.hero .sub-header {
+	font-size: 1.4em;
+	margin-bottom: 30px;
+	color: var(--white);
+}
+
+/* ---------------------------------------
+   2. SERVICES SEKTION
+   --------------------------------------- */
+.services-grid {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	/* RESPONSIV GAP */
+	/* Min: 20px, Præf: 4vw, Max: 50px */
+	gap: clamp(20px, 4vw, 50px);
+	margin-top: 40px;
+}
+
+.service-item {
+	background: var(--white);
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	flex: 1 1 300px;
+	min-height: 250px;
+	text-align: left;
+}
+
+.service-item ul {
+	list-style: none;
+	padding: 0;
+}
+
+.service-item li {
+	padding-left: 1.2em;
+	text-indent: -1.2em;
+	margin-bottom: 5px;
+}
+
+
+/* ---------------------------------------
+   3. OM OS SEKTION
+   --------------------------------------- */
+.about-us {
+	background-color: var(--white);
+}
+
+.about-us .intro-text {
+	max-width: 800px;
+	margin: 0 auto 40px auto;
+}
+
+.about-grid {
+	display: flex;
+	justify-content: space-between;
+	gap: 20px;
+	margin-bottom: 40px;
+}
+
+.about-grid div {
+	flex: 1;
+	padding: 20px;
+	border: 1px solid var(--light-gray);
+	border-radius: 5px;
+	text-align: center;
+}
+
+
+/* ---------------------------------------
+   4. KONTAKT FORMULAR SEKTION
+   --------------------------------------- */
+.contact-form {
+	background-color: var(--light-gray);
+}
+
+.simple-form {
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 30px;
+	background: var(--white);
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+	text-align: left;
+}
+
+.simple-form label {
+	display: block;
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.simple-form input[type="text"],
+.simple-form input[type="email"],
+.simple-form textarea {
+	width: calc(100% - 2px);
+	/* Justeret for at undgå scrollbar */
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+.simple-form textarea {
+	resize: vertical;
+}
+
+.simple-form button[type="submit"] {
+	margin-top: 25px;
+	width: 100%;
+}
+
+.alt-contact {
+	margin-top: 30px;
+}
+
+.alt-contact a {
+	color: var(--primary-color);
+	text-decoration: none;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+
+/* ---------------------------------------
+   5. FODNOTE
+   --------------------------------------- */
+footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+	background: #000;
+	color: var(--light-gray);
+	/*
+	background-color: #222;
+	padding: 20px 0;
+	font-size: 0.9em;
+	*/
+}
+
+footer a {
+	color: var(--white);
+	text-decoration: none;
+}
+
+/* ---------------------------------------
+   RESPONSIVE OVERSTYRINGER (VALGFRIT)
+   --------------------------------------- */
+@media (max-width: 768px) {
+
+	/* Fjern side-padding på body på meget små skærme (da clamp() kan gøre det) 
+       for at sikre full-width på visse elementer, hvis nødvendigt. */
+	body {
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+	}
+
+	.about-grid {
+		flex-direction: column;
+		/* Stabler Om Os kasser vertikalt på mobil */
+	}
+
+	nav a {
+		display: block;
+		margin: 5px 0;
+	}
+}
