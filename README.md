@@ -1,0 +1,2 @@
+# svanepudsweb
+Files for static site
